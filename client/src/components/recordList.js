@@ -26,7 +26,7 @@ export default function RecordList() {
  // This method fetches the records from the database.
  useEffect(() => {
    async function getRecords() {
-     const response = await fetch(`http://localhost:8008/record/`);
+     const response = await fetch(`https://mern-application-mba8.onrender.com/record/`);
  
      if (!response.ok) {
        const message = `An error occurred: ${response.statusText}`;
@@ -45,7 +45,7 @@ export default function RecordList() {
  
  // This method will delete a record
  async function deleteRecord(id) {
-   await fetch(`http://localhost:8008/record/${id}`, {
+   await fetch(`https://mern-application-mba8.onrender.com/record/${id}`, {
      method: "DELETE"
    });
  
