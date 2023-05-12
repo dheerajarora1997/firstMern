@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useParams, useNavigate } from "react-router";
  
 export default function Edit() {
+  const apiUrl = process.env.REACT_APP_API_URL;
  const [form, setForm] = useState({
    name: "",
    position: "",
@@ -10,11 +11,11 @@ export default function Edit() {
  });
  const params = useParams();
  const navigate = useNavigate();
- 
+
  useEffect(() => {
    async function fetchData() {
      const id = params.id.toString();
-     const response = await fetch(`https://mern-application-mba8.onrender.com/record/${params.id.toString()}`);
+     const response = await fetch(`${apiUrl}/record/${params.id.toString()}`);
  
      if (!response.ok) {
        const message = `An error has occurred: ${response.statusText}`;
@@ -53,7 +54,7 @@ export default function Edit() {
    };
  
    // This will send a post request to update the data in the database.
-   await fetch(`https://mern-application-mba8.onrender.com/record/${params.id}`, {
+   await fetch(`${apiUrl}/record/${params.id}`, {
      method: "PATCH",
      body: JSON.stringify(editedPerson),
      headers: {
