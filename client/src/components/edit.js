@@ -73,7 +73,7 @@ export default function Edit() {
  
  // This following section will display the form that takes input from the user to update the data.
  return (
-   <div>
+   <div className="container">
      <h3>Update Record</h3>
      <form onSubmit={onSubmit}>
        <div className="form-group">
