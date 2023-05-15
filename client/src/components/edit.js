@@ -5,7 +5,10 @@ export default function Edit() {
   const apiUrl = process.env.REACT_APP_API_URL;
  const [form, setForm] = useState({
    name: "",
+   age : "",
    position: "",
+   department : "",
+   salary :"",
    level: "",
    records: [],
  });
@@ -49,7 +52,10 @@ export default function Edit() {
    e.preventDefault();
    const editedPerson = {
      name: form.name,
+     age : form.age,
      position: form.position,
+     department : form.department,
+     salary : form.salary,
      level: form.level,
    };
  
@@ -81,6 +87,16 @@ export default function Edit() {
          />
        </div>
        <div className="form-group">
+         <label htmlFor="age">Age: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="age"
+           value={form.age}
+           onChange={(e) => updateForm({ age: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
          <label htmlFor="position">Position: </label>
          <input
            type="text"
@@ -88,6 +104,26 @@ export default function Edit() {
            id="position"
            value={form.position}
            onChange={(e) => updateForm({ position: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="department">Department: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="department"
+           value={form.department}
+           onChange={(e) => updateForm({ department: e.target.value })}
+         />
+       </div>
+       <div className="form-group">
+         <label htmlFor="salary">Salary: </label>
+         <input
+           type="text"
+           className="form-control"
+           id="salary"
+           value={form.salary}
+           onChange={(e) => updateForm({ salary: e.target.value })}
          />
        </div>
        <div className="form-group">

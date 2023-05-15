@@ -25,9 +25,11 @@ router.get("/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   let newDocument = {
     name: req.body.name,
+    age: req.body.age,
     position: req.body.position,
-    level: req.body.level,
     department: req.body.department,
+    salary: req.body.salary,
+    level: req.body.level,
   };
   let collection = await db.collection("records");
   let result = await collection.insertOne(newDocument);
@@ -40,9 +42,11 @@ router.patch("/:id", async (req, res) => {
   const updates = {
     $set: {
       name: req.body.name,
+      age: req.body.age,
       position: req.body.position,
-      level: req.body.level,
       department: req.body.department,
+      salary: req.body.salary,
+      level: req.body.level,
 
     }
   };

@@ -4,9 +4,11 @@ import { Link } from "react-router-dom";
 const Record = (props) => (
  <tr>
    <td>{props.record.name}</td>
+   <td>{props.record.age}</td>
    <td>{props.record.position}</td>
    <td>{props.record.department}</td>
    <td>{props.record.salary}</td>
+   <td>{props.record.level}</td>
    <td>
      <Link className="btn btn-link" to={`/edit/${props.record._id}`}>Edit</Link> |
      <button className="btn btn-link"
@@ -75,9 +77,12 @@ export default function RecordList() {
        <thead>
          <tr>
            <th>Name</th>
+           <th>Age</th>
            <th>Position</th>
            <th>Department</th>
            <th>Salary</th>
+           <th>Level</th>
+           <th></th>
          </tr>
        </thead>
        <tbody>{recordList()}</tbody>
